@@ -7,4 +7,5 @@
 
 ## 실행 화면
 - 1단계 코드의 실행 스크린샷
-  
+  <img width="816" height="514" alt="image" src="https://github.com/user-attachments/assets/2fb0b610-1500-4d21-9a44-19617232d53d" />
+
