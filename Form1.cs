@@ -1,13 +1,12 @@
 namespace CatchBotton
 {
+    // 효과음
     using System.Media;
     public partial class Form1 : Form
     {
-        SoundPlayer runSound = new SoundPlayer(@"run.wav");
-        SoundPlayer catchSound = new SoundPlayer(@"catch.wav");
-
         Random rd = new Random();
 
+        //점수
         int score = 0;
         // 버튼 놓친 횟수
         int missCount = 0;
@@ -15,7 +14,6 @@ namespace CatchBotton
         public Form1()
         {
             InitializeComponent();
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,14 +23,15 @@ namespace CatchBotton
 
         private void GameOver()
         {
-            //게임오버 함수
+            // 게임오버 함수
             MessageBox.Show("Game Over");
-            //재시작 함수 실행
+            // 재시작 함수 실행
             ResetGame();
         }
 
         private void ResetGame()
         {
+            // 점수와 놓친 횟수 초기화
             score = 0;
             missCount = 0;
 
@@ -43,15 +42,13 @@ namespace CatchBotton
             // 버튼 위치 초기화
             RunningBotton.Location = new Point(100, 100);
 
-            // 버튼 다시 활성화
-            RunningBotton.Enabled = true;
-
             // 제목 초기화
-            this.Text = "Catch Button Game";
+            this.Text = "버튼 잡기 게임";
         }
 
         private void RunningBotton_MouseEnter(object sender, EventArgs e)
         {
+            // 효과음 추가
             SystemSounds.Beep.Play();
 
             // 놓치면 점수 -10점, 놓친 횟수 +1
@@ -72,7 +69,8 @@ namespace CatchBotton
             // 5. 시각적피드백(폼제목표시줄에좌표출력)
             this.Text = $"버튼위치: ({nextX}, {nextY}) | 점수: {score}";
 
-            if(missCount >= 20)
+            // 놓친 횟수가 20이 되면 게임오버 함수 실행
+            if(missCount == 20)
             {
                 GameOver();
             }
@@ -82,8 +80,10 @@ namespace CatchBotton
 
         private void RunningBotton_MouseClick(object sender, MouseEventArgs e)
         {
-            score += 100;
+            // 효과음 추가
             SystemSounds.Asterisk.Play();
+            // 점수 +100점
+            score += 100;
             MessageBox.Show("축하합니다~!");
 
             // 버튼 크기 10% 감소
