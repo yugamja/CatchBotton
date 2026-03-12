@@ -14,4 +14,7 @@
   <img width="814" height="509" alt="image" src="https://github.com/user-attachments/assets/3b5cc303-663e-41af-8397-d0c06ebceab3" />
 - 3단계 코드의 실행 스크린샷
   <img width="1675" height="536" alt="image" src="https://github.com/user-attachments/assets/f4c8660e-953a-4c6f-bc76-5d62b0319e51" />
-
+  (왼)폼 제목에 점수판 추가, (오)성공 후 버튼의 크기가 축소된
+- 4단계 코드의 실행 스크린샷
+  <img width="1704" height="563" alt="image" src="https://github.com/user-attachments/assets/304f6321-767c-4e77-a29d-2f94fe2618ff" />
+  (왼)20번 놓치 후 게임오버 창이 뜸, (오)게임오버 창을 확인하면 완전히 처음 화면이 보임
