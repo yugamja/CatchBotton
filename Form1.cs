@@ -1,10 +1,15 @@
 namespace CatchBotton
 {
+    using System.Media;
     public partial class Form1 : Form
     {
+        SoundPlayer runSound = new SoundPlayer(@"run.wav");
+        SoundPlayer catchSound = new SoundPlayer(@"catch.wav");
+
         public Form1()
         {
             InitializeComponent();
+            Random rd = new Random();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -14,6 +19,8 @@ namespace CatchBotton
 
         private void RunningBotton_MouseEnter(object sender, EventArgs e)
         {
+            SystemSounds.Beep.Play();
+
             // 1. 난수생성기준비
             Random rd = new Random();
             // 2. 가용영역계산(버튼이폼테두리에걸리지않게보호)
@@ -27,11 +34,13 @@ namespace CatchBotton
             RunningBotton.Location = new Point(nextX, nextY);
             // 5. 시각적피드백(폼제목표시줄에좌표출력)
             this.Text = $"버튼위치: ({nextX}, {nextY})";
+
         }
 
         private void RunningBotton_MouseClick(object sender, MouseEventArgs e)
         {
-           
+            SystemSounds.Asterisk.Play();
+            MessageBox.Show("축하합니다~!");
         }
     }
 }
